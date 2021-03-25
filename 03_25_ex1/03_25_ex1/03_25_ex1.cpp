@@ -8,6 +8,8 @@ using namespace std;
 /// --> 앞으로 A를 쓰면 B로 치환된다.
 ///     A   B
 #define PI	3.141592
+/// 선언된 PI는 어디서나 사용 가능
+
 
 ///     A           B
 #define SUM(a,b)	a+b
@@ -20,8 +22,95 @@ using namespace std;
 
 //#define OOP2
 
+class CPerson
+{
+public:
+	/// 수정
+	char m_Name[ 16 ];
+	int m_Age;
+
+	/// 함수를 선언해서 사용할 수 있다.
+	void print()
+	{
+		cout << "Name: " << m_Name << endl;
+		cout << "Age: " << m_Age << endl;
+	}
+};
+
+
+
 int main()
 {
+	/// const -> 변수의 상수화. 초기화 시에 반드시 값을 주어야 한다.
+	int x = 3;
+	int const i = 10;
+	printf("i: %d\n", i);
+	//i = 10;
+
+	/// 변수의 유효 범위 -> 선언된 위치에 따라 다름
+
+	/*
+	/// 포인터 변수는 선언할 때 반드시 앞에 * 붙는다.
+	int a = 3;
+	/// 변수의 주소를 알 수 있는 방법 : 주소 연산자
+	/// 포인터 --> 주소 값만 사용이 가능
+	int *b;
+
+	b = &a;
+	printf("A : %d %p\n", a, &a);
+	printf("B : %p %p\n", b, &b);
+
+
+
+	CPerson p[2];
+
+	/// = 등호를 기준으로 왼쪽은 l-value라 부르고,
+	/// 오른쪽은 r-value라 부릅니다.
+	/// l-value : 변수
+	/// r-value : 모두(변수, 상수, 매크로, 함수 ... )
+	//p[0].m_Name = "Kim Do Hyung";
+	memcpy(p[0].m_Name, "Kim Do Hyung", strlen("Kim Do Hyung"));
+	p[0].m_Name[12] = '\0';
+	p[0].m_Age = 11;
+	p[0].print();
+
+	//p[1].m_Name = "Kim Na In";
+	memcpy(p[1].m_Name, "Kim Na In", strlen("Kim Na In"));
+	p[1].m_Name[9] = '\0';
+	p[1].m_Age = 9;
+	p[1].print();
+
+	char str[] = "대한민국";
+	int length = sizeof(str);
+	printf("%s %d\n", str, length);
+
+	wchar_t wstr[] = L"대한민국";
+	int wlength = sizeof(wstr);
+	wcout << str << wlength << endl;
+
+	int i = 0;
+	char A = 'A';
+	char B = 66;
+	/// char : ASCii 형식이므로 1byte의 공간을 사용
+	char C[ ] = "ab";
+	/// Unicode 형식으로 2byte의 공간을 사용
+	/// Unicode으로 문자열을 초기화/사용할 때는 앞에 L (대문자 L)을 반드시 붙여야 함
+	wchar_t D[] = L"AB";
+	
+	printf("%s\n", C);
+	/// 일반적인 방법으로 Unicode를 출력하지 못함 -> 메모리의 구조 때문
+	/// 2byte 사용시 A \0 B \0 형태로 입력되기 때문
+	printf("%s\n", D);
+
+	printf("%d[ %c ] %d[ %c ]\n", A, A, B, B);
+
+	for (; i < 128; i++)
+	{
+		printf("%d ] %c\n", i, i);
+	}
+
+
+
 	cout << __FILE__ << endl;
 	cout << __LINE__ << endl;
 	cout << __FUNCTION__ << endl;
@@ -33,6 +122,7 @@ int main()
 	/// 조건의 거짓
 	cout << "Hello " << SUM(3,5) << " computer!\n";
 #endif
+*/
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴

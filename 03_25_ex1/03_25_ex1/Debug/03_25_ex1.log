@@ -1,2 +1,2 @@
 ﻿  03_25_ex1.cpp
-  03_25_ex1.vcxproj -> D:\2021_wikim\2021_oop2\03_25_ex1\Debug\03_25_ex1.exe
+d:\2021_wikim\2021_oop2\03_25_ex1\03_25_ex1\03_25_ex1.cpp(47): error C3892: 'i': const인 변수에 할당할 수 없습니다.
