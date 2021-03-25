@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+using namespace std;
 
 /// 매크로 정의 : #define(keyword) A B 로 선언한다.
 /// --> 앞으로 A를 쓰면 B로 치환된다.
@@ -11,10 +12,27 @@
 ///     A           B
 #define SUM(a,b)	a+b
 
+/// #ifdef : 만약 선언되어 있다면
+/// #ifndef : 만약 선언이 안되어 있다면
+/// #else : else
+/// #endif : #ifdef의 마지막 위치임을 알림
+/// 
+
+//#define OOP2
+
 int main()
 {
-    std::cout << "Hello " << PI << " World!\n";
-	std::cout << "Hello " << SUM(3,5) << " World!\n";
+	cout << __FILE__ << endl;
+	cout << __LINE__ << endl;
+	cout << __FUNCTION__ << endl;
+
+#ifndef OOP2
+	/// 조건의 참
+    cout << "Hello " << PI << " World!\n";
+#else
+	/// 조건의 거짓
+	cout << "Hello " << SUM(3,5) << " computer!\n";
+#endif
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
