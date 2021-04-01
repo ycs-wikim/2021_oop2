@@ -7,8 +7,73 @@ using namespace std;
 #define SWAP(a, b)	{ a ^= b; b ^= a; a ^= b; }
 
 
+/// 예제 4-5의 함수
+int Add(int a, int b)
+{
+	return a + b;
+}
+
+
 int main()
 {
+	int i = 0;
+	/*
+	for ( [1] ; [2] ; [3] )
+	{
+		[4];
+	}
+
+	/// 실행 순서
+	[1] -> [2] -> [4] -> [3] -> [2] -> [4] -> ...
+	* /
+	for (i = 1; i < 15; i += 3)
+	{
+		printf("i : %d\n", i++);
+	}
+	*/
+	/// for( ) 아무것도 입력하지 않아도 되나, 무한 반복 될 수 있는 조건이 발생하지 않도록 조심해야 한다.
+	for ( ; ; )		/// 무한 반복 : while(1)
+	{
+		printf("i :: %d\n", i++);
+		if (i > 16)
+			break;
+	}
+
+
+
+/*
+/// 예제 4-5
+	int a = 1, b = 1;
+
+	/// 평가식
+	switch (Add(1, 2))
+	{
+		case 3:
+			cout << "case 3 " << Add(a, b) << endl;
+			break;
+		case 0:
+			cout << "case 0 " << Add(a, b) << endl;
+			break;
+		case 1:
+			cout << "case 1 " << Add(a, b) << endl;
+			break;
+		case 2:
+			cout << "case 2 " << Add(a, b) << endl;
+			a = 3;
+			b = 7;
+			if (1)
+				cout << Add(a, b) << endl;
+			break;	/// endif == case 3:의 처리 범위 완료
+
+		case 4:
+			a = 30;
+			b = 70;
+			if (1)
+				cout << Add(a, b) << endl;
+	}
+
+
+/*
 /// 예제 4-3
 	int a = 3;
 	int b = 9;
