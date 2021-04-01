@@ -4,11 +4,62 @@
 #include <iostream>
 using namespace std;
 
+#define SWAP(a, b)	{ a ^= b; b ^= a; a ^= b; }
+
+
 int main()
 {
-	int a = 23480;
+/// 예제 4-3
+	int a = 3;
+	int b = 9;
+
+	if (-98)
+		SWAP(a, b);
+
+	printf("a: %d - b: %d\n", a, b);
+
+	/// 제어문
+	/// 문장 형식
+	/*
+	if       ( a > b )
+		/// if문은 바로 뒤의 한 문장만 인정
+	KEYWORD  ( 조건식 )
+
+	if( a > b )
+		a = a + 1;
+	else	// a <= b 경우. 즉, 조건식이 거짓일 때.
+		/// else는 바로 뒤의 한 문장만 인정
+
+	if( a > b )
+	{
+		a = a + 1;
+////////////////////////////////////// endif
+
+		b = b + 1;
+	}
+	else
+	{
+		a = a - 1;
+		b = b - 1;
+	}
+	*/
+
+/*
+	int a = 165;
+	char c = 0;
+	float f = 0.0;
 	int b[5] = { 3, 4, 5, };
 
+	/// 형변환  : 명시적 - 프로그래머가 지정 ******
+	///			: 묵시적 - 자동으로 변환되지만 사용하지 말것.
+	/// char = int
+	c = (char)a;		/// 가능 :: 1 = 4;
+	f = (float)a;		/// 가능 :: 4 = 4;
+	printf("%d\n", sizeof(float));
+	printf("%d %c\n", c, c);
+	printf("%d\n", 5 / 2);
+
+	/*
 	/// sizeof 확인 --> 할당되어 있는 메모리의 크기를 반환
 	printf("sizeof(int) : %d byte\n", sizeof(int));
 	printf("sizeof(a) : %d byte\n", sizeof(a));
