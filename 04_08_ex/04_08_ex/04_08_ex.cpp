@@ -9,6 +9,32 @@ using namespace std;
 
 int main()
 {
+	int a = 3;
+	int *b = nullptr;
+	b = (int*)malloc(sizeof(int));
+	*b = 3;
+
+	printf("%d %p\n", *b, b);
+	printf("%d %p\n", a, &a);
+
+/*
+	int i = 0;
+	int j = 0;
+	/// 별 그리기
+
+	/// 줄의 수
+	for (i =0; i < 5; i++)
+	{
+		for (j = 0; j < 4 - i; j++)
+			cout << " ";
+		/// 별의 수 : 5, 4, 3, 2, 1
+		//for (j=5; j > i ; j--)
+		for( j = 0; j < i + 1; j++)
+			cout << "*";
+		cout << endl;
+	}
+
+/ *
 	/// 1. 4단 까지만 출력하고 싶다.
 
 	/// 예제 4-13 : 다중 반복 (반복문 안에 반복문)
@@ -32,7 +58,7 @@ int main()
 		/// i = 2
 	}
 	//// break된 위치
-/*
+/ *
 	/// Ex) 4-10
 	int Sum = 0;
 	int i = 0;	/// 초기값
