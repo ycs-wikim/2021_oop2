@@ -3,8 +3,47 @@
 
 #include <iostream>
 
+int function(int *a)		/// int *a = &x;
+{
+	int b = 5;
+	printf("&a; %p\n", &a);
+	printf("a : %p\n", a);
+	printf("a : %d\n", *a);
+	a = a + b;
+	return b;		/// int
+}
+
+int main( )
+{
+	int x = 3;
+	x = function(&x);
+	printf("&x; %p\n", &x);
+	printf("x: %d\n", x);
+
+/*
+void function(
+	int *x			/// int* = int*
+)
+{
+	int y = 5;
+	printf("x: %p\n", x);
+	printf("&x: %p\n", &x);
+	printf("*x: %d\n", *x);
+	printf("&y: %p\n", &y);
+
+	*x = 123;
+	//return x, y;		/// 문법적으로는 허용하나 실제 반환은 y만
+	//return x + y;		/// int* + int
+	//return y;
+}
+
 int main()
 {
+	int x = 7;
+	printf("main x: %p\n", &x);
+	function(&x);	/// 10
+	printf("%d\n", x);
+/* 일반적인 포인터의 예와 필요한 정보
 	int a = 3;		/// 일반 변수의 선언
 	int *p = &a;	/// 포인터 변수의 선언
 	/// 포인터 변수의 선언
@@ -28,9 +67,9 @@ int main()
 	printf("PTR*: %d\n", *ptr);		/// ( *ptr == a ) a의 값이
 	printf("PTR*: %d\n", &ptr);
 
-/*
+/ *
 	int* = [ int; -> int* ]
-*/
+* /
 	
 	a = 5;
 	printf("A-1: %d\n", a);
@@ -39,4 +78,5 @@ int main()
 	printf("A-2: %d\n", a);
 
     std::cout << "Hello World!\n";
+*/
 }
