@@ -4,6 +4,69 @@
 #include <iostream>
 using namespace std;
 
+
+
+
+/// 함수 선언
+/// 함수의 반환 타입 : 호출자에게 돌려줄 값
+/// 함수의 이름 : 사용자 정의. 예약 함수와 동일하지 않아야 함. 가능하면 하지 말것
+///		중복으로 정의가 가능. 함수의 인수가 달라야만(인수의 개수, 자료형) 중복 선언이 가능
+/// ( ) 안에 함수의 인수 : 함수로 전달할 값
+void printf()
+{
+	printf("asdf\n");
+}
+
+/// template
+int plus(int a, int b)
+{
+	return a + b;
+}
+
+float plus(float a, float b)
+{
+	return a + b;
+}
+
+char plus(char a, char b)
+{
+	return a + b;
+}
+
+
+void printf(int b)
+{
+	printf("asdf : %d\n", b);
+}
+
+void printf(int a)
+{
+	printf("asdf : %d\n", a);
+}
+
+void printf(char c)
+{
+	printf("asdf CHAR : %d\n", c);
+}
+
+/// 함수(변수)의 이름을 짓는 방법
+/// SNAKE case : get_user_name( ) - 내부 함수
+/// CAMEL case : GetUserName( ) - 라이브러리
+int main()
+{
+	printf();
+	printf(1);
+	printf('A');
+}
+
+
+
+
+
+
+
+
+/*
 /// Ex.7-4.
 
 typedef struct STag
@@ -14,6 +77,36 @@ typedef struct STag
 } SType;
 
 
+/// 구조체 인자를 값 전달
+/// void func(int a)
+SType func(SType *a)
+{
+	SType z;
+	z.m = 15;
+	a->m = 9;
+	printf("a: %p\n", &a->m);
+
+	return z;
+}
+
+
+/// 공용체 : LARGE_INTEGER
+
+int main()
+{
+	SType b, c;
+
+	b.m = 10;
+	c = func(&b);
+	printf("b: %p\n", &b.m);
+	printf("c: %p\n", &c.m);
+	printf("%d %d\n", b.m, c.m);
+
+	return 0;
+}
+
+
+/*
 int main()
 {
 	SType s1;
@@ -41,14 +134,14 @@ int main()
 	{
 
 	}
-	*/
+
 
 	/// 각 멤버의 주소 값 출력
 	printf("%p %p %p %p\n", &s2.m, &s2.str1, &s2.str2, s2.str2);
 
 	cout << s2.m << " " << s2.str1 << " " << s2.str2 << endl;
 }
-
+*/
 
 
 /*
