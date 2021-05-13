@@ -3,7 +3,35 @@
 
 #include <iostream>
 
+/// 디폴트 인자 : 해당 위치에 인수가 전달되지 않으면 자동으로 설정되는 인수의 값
+void GH(int a, int b = 6)		/// int a = x, int b = y
+{
+	printf("%d %d\n", a, b);
+}
 
+/// 함수의 원형에서 디폴트 인자가 선언되면
+/// 구현체에서는 디폴트 인자를 제외해야 한다.
+void IJ(int a, int b, int c, int d = 9, int e = 11);
+
+int main()
+{
+	int x = 3;
+	int y = 5;
+
+	IJ(y, x, 1, 2, 3);
+	GH(x, y);
+	GH(7);
+}
+
+/// 디폴트 인자는 뒤에서부터 입력하는 것이 일반적
+/// 주의사항 : 디폴트 인자 사이에 일반 인수가 존재하면 안된다.
+void IJ(int a, int b, int c, int d, int e)
+{
+	printf("%d %d %d %d %d\n", a, b, c, d, e);
+}
+
+
+/*
 /// call-by-value : 함수 호출 시 값에 의한 호출 --> 전달된 값이 대입 연산과 동일
 
 void AB(int x)			// 호출되는 시점 : int x = 3
@@ -36,7 +64,7 @@ int main()
 	EF(y);
 	return 0;
 }
-
+*/
 
 
 
