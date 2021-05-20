@@ -1,0 +1,5 @@
+﻿  05_20_ex.cpp
+d:\2021_wikim\2021_oop2\05_20_ex\05_20_ex\05_20_ex.cpp(76): error C2247: 'CFamily::SetFasmilyName'에 액세스할 수 없습니다. 이는 'CName'이(가) 'private'을(를) 사용하여 'CFamily'에서 상속하기 때문입니다.
+  d:\2021_wikim\2021_oop2\05_20_ex\05_20_ex\05_20_ex.cpp(37): note: 'CFamily::SetFasmilyName' 선언을 참조하십시오.
+  d:\2021_wikim\2021_oop2\05_20_ex\05_20_ex\05_20_ex.cpp(46): note: 'CName' 선언을 참조하십시오.
+  d:\2021_wikim\2021_oop2\05_20_ex\05_20_ex\05_20_ex.cpp(24): note: 'CFamily' 선언을 참조하십시오.
