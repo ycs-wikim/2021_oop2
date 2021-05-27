@@ -4,6 +4,71 @@
 #include <iostream>
 using namespace std;
 
+/// Ex 9-14.
+
+struct Test
+{
+	int m_int;
+};
+
+class CTest
+{
+public:
+	/// 변수에 상수화 : const 자료형 변수명; 자료형 const 변수명;
+	///			--> 예약어가 먼저 온다.
+	/// 함수의 상수화 : 예약어가 뒤에 온다.
+
+	/// const 멤버 함수의 선언 방법 1
+	void Func1() const
+	{
+		/// 멤버 변수를 변경할 수 없음
+		//m_value = 3;
+	}
+
+	/// const 멤버 함수의 선언 방법 2
+	void Func2() const;
+
+	int m_value;
+};
+
+/// const 멤버 함수의 선언 방법 2 --> 외부에서 선언 가능
+void CTest::Func2() const
+{
+	/// 변수를 선언해서 사용하는 경우
+	int x;
+	x = 3;
+	printf("X: %d\n", x);
+}
+
+
+int main()
+{
+	const CTest ct;
+	ct.Func1();
+	ct.Func2();
+
+	CTest t;
+	t.Func1();
+	t.Func2();
+
+	printf("%d - %d\n", sizeof(struct Test), sizeof(t));
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 class CTest
 {
 public:
@@ -76,11 +141,12 @@ void func()
 
 int main()
 {
+	/*
 	ABC abc(7);
 	ABC a;
 	ABC b;
 	ABC c;
-
+	* /
 	printf("%p\n", func);
 	printf("abc : %p\n", &ABC::function);
 	//printf("a : %p\n", &a.function);
@@ -89,3 +155,4 @@ int main()
 
     std::cout << "Hello World!\n";
 }
+*/
