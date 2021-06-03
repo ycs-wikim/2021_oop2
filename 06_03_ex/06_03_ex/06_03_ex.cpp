@@ -4,6 +4,76 @@
 #include <iostream>
 
 
+class CTest
+{
+public:
+	/// 디폴트 생성자
+	CTest() : mv(3)
+	{
+		//mv = 78;
+		m_value = 0;
+	}
+
+	/// 복사 생성자
+	/// const를 붙이는 이유?
+	/*
+	CTest(const CTest& obj)
+	{
+		m_value = obj.m_value + 888;
+	}
+	*/
+	const int mv;
+	int m_value;
+};
+
+int main()
+{
+	/// 최초 인스턴스화
+	CTest t;				/// m_value = 0
+	t.m_value = 1;			/// m_value = 1
+
+	/// 인스턴스로 초기화 --> 복사 생성자 호출
+	CTest t1(t);			/// m_value = 2
+	/// 할당/대입문으로 인스턴스 초기화 --> 복사 생성자 호출
+	CTest t2 = t;			/// m_value = 2
+	/// 단순 선언
+	CTest t3;
+	/// 할당/대입 수행
+	t3 = t;					/// m_value = 1
+
+	std::cout << "t1: " << t1.m_value << std::endl;
+	std::cout << "t2: " << t2.m_value << std::endl;
+	std::cout << "t3: " << t3.m_value << std::endl;
+}
+
+
+/*
+class CParentA
+{
+public:
+	int m_value;
+	CParentA()
+	{
+		printf("%s [ %d ]\n", __FUNCTION__, m_value);
+	}
+	~CParentA()
+	{
+		m_value = 3;
+		printf("%s [ %d ]\n", __FUNCTION__, m_value);
+		m_value = 3333;
+	}
+	//static int mV;
+};
+
+
+int main()
+{
+	CParentA a;
+}
+
+
+
+/*
 class CParentA
 {
 public:
@@ -53,7 +123,7 @@ int main()
 }
 
 
-/*
+/ *
 class CA
 {
 public:
