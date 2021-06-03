@@ -1,5 +1,5 @@
 # Visual Studio project tmp directory
-.vs/
+.vs/*
 
 # Prerequisites
 *.d
