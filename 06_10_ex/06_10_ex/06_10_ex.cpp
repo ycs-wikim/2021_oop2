@@ -4,6 +4,10 @@
 #include <iostream>
 using namespace std;
 
+/// 동적 메모리 할당 : OS에게 메모리 공간을 요청
+/// C : malloc(calloc, realloc) / free
+/// C++ : new / delete
+
 class CTest
 {
 public:
@@ -11,16 +15,25 @@ public:
 	{
 		cout << "Contructor!" << endl;
 	}
+
+	~CTest()
+	{
+		cout << "Destructor!" << endl;
+	}
 };
 
 void main()
 {
 	cout << "<malloc>" << endl;
+	/// ( 변환할 자료형 )예약어(할당할 메모리의 크기);
 	CTest *pT1 = (CTest*)malloc(sizeof(CTest));
 	free(pT1);
 
+	/// 출력
 	cout << "<new>" << endl;
+	/// 생성
 	CTest *pT2 = new CTest;
+	/// 해제
 	delete pT2;
 }
 
