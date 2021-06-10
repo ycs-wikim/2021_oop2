@@ -1,5 +1,15 @@
 # Visual Studio project tmp directory
 .vs/*
+*.log
+*.tlog
+*.obj
+*.idb
+*.pdb
+*.lastbuildstate
+*.ilk
+*.db
+*.suo
+*.ipch
 
 # Prerequisites
 *.d
