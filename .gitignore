@@ -10,6 +10,7 @@
 *.db
 *.suo
 *.ipch
+*.opendb
 
 # Prerequisites
 *.d
